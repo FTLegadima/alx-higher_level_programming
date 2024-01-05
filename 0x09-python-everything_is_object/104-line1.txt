@@ -1,0 +1,12 @@
+The execution of the first line (a = 1024) creates one integer object with the value 1024.
+The execution of the second line (b = 1024) creates a second integer object with the value 1024. This is a separate object from the one created in line 1 because integers are not cached in the same way as small integers.
+After the execution of line 3 (del a), the int object pointed by a is not immediately deleted. The del statement removes the name a from the namespace, but it does not necessarily delete the object. In CPython, the object will be deleted by the garbage collector when there are no more references to it.
+After the execution of line 4 (del b), similarly, the int object pointed by b is not immediately deleted. It will be deleted by the garbage collector when there are no more references to it.
+The execution of the last line (c = 1024) creates a third integer object with the value 1024.
+Therefore:
+
+Number of int objects created by the first line: 1 (for variable a).
+Number of int objects created by the second line: 1 (for variable b).
+After the execution of line 3, the int object pointed by a is not immediately deleted: No.
+After the execution of line 4, the int object pointed by b is not immediately deleted: No.
+Number of int objects created by the last line: 1 (for variable c).

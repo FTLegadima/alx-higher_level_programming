@@ -1,0 +1,7 @@
+The execution of the first line (a = 1) creates one integer object with the value 1.
+The execution of the second line (b = 1) does not create a new integer object. Instead, it references the existing integer object with the value 1.
+Therefore:
+
+Number of int objects created by the first line: 1 (for variable a).
+Number of int objects created by the second line: 0.
+Please note that in CPython, small integers (commonly used integers like 0, 1, and small positive/negative numbers) are cached and reused. In this case, both a and b reference the same cached integer object with the value 1.

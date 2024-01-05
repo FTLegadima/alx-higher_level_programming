@@ -1,0 +1,12 @@
+The execution of the first line (a = "SCHL") creates one string object.
+The execution of the second line (b = "SCHL") does not create a new string object. Instead, it references the existing string object created in line 1 because identical string literals are automatically interned in CPython.
+After the execution of line 3 (del a), the string object pointed by a is not immediately deleted. The del statement removes the name a from the namespace, but it does not necessarily delete the object. In CPython, the object will be deleted by the garbage collector when there are no more references to it.
+After the execution of line 4 (del b), similarly, the string object pointed by b is not immediately deleted. It will be deleted by the garbage collector when there are no more references to it.
+The execution of the last line (c = "SCHL") creates a second string object because it is a new assignment.
+Therefore:
+
+Number of string objects created by the first line: 1 (for variable a).
+Number of string objects created by the second line: 0 (for variable b).
+After the execution of line 3, the string object pointed by a is not immediately deleted: No.
+After the execution of line 4, the string object pointed by b is not immediately deleted: No.
+Number of string objects created by the last line: 1 (for variable c).

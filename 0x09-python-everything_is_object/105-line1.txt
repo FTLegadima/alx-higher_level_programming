@@ -1,0 +1,13 @@
+
+Before the execution of line 2 (print("Love")), a total of 44 small integer objects have been created and are still in memory.
+
+Explanation:
+
+In CPython, small integers (commonly used integers like 0, 1, and small positive/negative numbers) are cached and reused to optimize memory usage. The range of small integers is defined by NSMALLPOSINTS and NSMALLNEGINTS. In Python 3.8, NSMALLPOSINTS and NSMALLNEGINTS are both set to 257.
+
+Therefore, small integers from -5 to 256 (inclusive) are cached and reused. In the provided script, the integers 0, 1, and -5 are created during the startup of the Python interpreter. When line 2 (print("Love")) is executed, no additional small integer objects are created because the integers used in the print statement fall within the range of the cached small integers.
+
+To summarize:
+
+Before the execution of line 2, 44 small integer objects are created and still in memory.
+These small integer objects include integers from -5 to 256, which are cached and reused to optimize memory usage.
